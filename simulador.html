@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>“Simulador de Desconto e Parcelamento (Juros Simples)</title>
-    <link rel="stylesheet" href="estilo.css"/>
+    <title>Simulador de Desconto e Parcelamento (Juros Simples)</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
@@ -13,8 +13,8 @@
 
         <form id="form">
             <div class="campo">
-                <label for="preço">Preço (R$)</label>
-                <input id="preço" type="number" step="0.01" min="0" required />
+                <label for="preco">Preço (R$)</label>
+                <input id="preco" type="number" step="0.01" min="0" required />
             </div>
 
             <div class="campo">
@@ -23,13 +23,13 @@
             </div>
 
             <div class="campo">
-                <label for="taxa">Taxa de juros simples mensal (%)</label>
+                <label for="taxa">Taxa de juros (%)</label>
                 <input id="taxa" type="number" step="0.01" min="0" value="0" required />
             </div>
 
              <div class="campo">
-                <label for="parecelas">Numero de Pareclas (meses)</label>
-                <input id="taxa" type="number"  min="1" value="1" required />
+                <label for="parecelas">Nº de Parcelas (meses)</label>
+                <input id="parcelas" type="number"  min="1" value="1" required />
             </div>
 
         <button type="submit">Calcular</button>
@@ -38,14 +38,29 @@
      <section class="resultado" id="resultados" hiddem>
         <h2>Resultados</h2>
         <ul>
-            <li><strong>Preço com desconto:</strong> <span id="PreçoComDesconto"></span></li>
-            <li><strong>Valor da Parcela:</strong> <span id="ValorDaParcela"></span></li>
-            <li><strong>Total a Pagar:</strong> <span id="TotalPagar"></span></li>
-            <li><strong>Economia com desconto:</strong> <span id="Economia"></span></li>
+            <li><strong>Preço com desconto:</strong> <span id="precoComDesconto"></span></li>
+            <li><strong>Valor da Parcela:</strong> <span id="valorParcela"></span></li>
+            <li><strong>Total a Pagar:</strong> <span id="totalPagar"></span></li>
+            <li><strong>Economia com desconto:</strong> <span id="economia"></span></li>
         </ul>
      </section>
 
-
+<section id="tabelaSecao" hidden>
+      <h2>Tabela de Parcelas (Juros Simples)</h2>
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th>Mês</th>
+            <th>Parcela (R$)</th>
+            <th>Juros do mês (R$)</th>
+            <th>Amortização (R$)</th>
+            <th>Principal restante (R$)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
         </main>
+        <script src="script.js"></script>
 </body>
 </html>
